@@ -8,12 +8,14 @@ AppDataSource.initialize()
     console.log('Database connected!');
 
     const app = express();
-    const port = process.env.PORT || 3333;
+    const port = Number(process.env.PORT) || 3333;
 
     app.use(express.json());
     app.use(router);
 
-    app.listen(port, () => console.log(`Server is running in port ${port}!`));
+    app.listen(port, '0.0.0.0', () => {
+      console.log(`Server is running in port ${port}!`);
+    });
   })
   .catch((error) => {
     console.log('Error connecting to database: ', error);
