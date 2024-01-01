@@ -10,4 +10,9 @@ export const AppDataSource = new DataSource({
   port: Number(process.env.DB_PORT),
   entities: ['src/entities/**/*.{js,ts}'],
   migrations: ['src/migrations/**/*.{js,ts}'],
+  extra: {
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
 });
