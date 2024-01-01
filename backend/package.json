@@ -9,7 +9,7 @@
     "migration:revert": "typeorm-ts-node-commonjs migration:revert -d src/data-source.ts",
     "migration:run": "typeorm-ts-node-commonjs migration:run -d src/data-source.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "ts-node dist/index.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
