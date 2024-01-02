@@ -12,7 +12,7 @@
     "migration:revert": "typeorm-ts-node-commonjs migration:revert -d src/data-source.ts",
     "migration:run": "typeorm-ts-node-commonjs migration:run -d src/data-source.ts",
     "migration:run:prd": "typeorm migration:run -d dist/data-source.js",
-    "build": "npx babel src --out-dir dist --extensions \".ts\" --source-maps",
+    "build": "./node_modules/.bin/babel src --out-dir dist --extensions \".ts\" --source-maps",
     "build:prd": "rm -rf dist/ && yarn build && yarn migration:run:prd && yarn start",
     "start": "node dist/index.js"
   },
