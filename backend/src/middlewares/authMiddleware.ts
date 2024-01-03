@@ -13,7 +13,7 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
 
   if (!authorization) {
     return res.status(401).json({
-      message: 'Token não encontrado!',
+      message: 'Não autorizado',
     });
   }
 
