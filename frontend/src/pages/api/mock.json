@@ -1,9 +1,9 @@
 {
-	"example": [
-		{
-			"id": 1,
-			"title": "NextJS Structure",
-			"description": "A ReactJS + NextJS structure developed by Mario Paglia"
-		}
-	]
+  "example": [
+    {
+      "id": 1,
+      "title": "NextJS Structure",
+      "description": "A ReactJS + NextJS structure developed by Mario Paglia"
+    }
+  ]
 }
