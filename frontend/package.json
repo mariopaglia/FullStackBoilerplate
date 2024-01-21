@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-structure",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,12 +10,6 @@
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --write \"**/*.{css,scss,jsx,tsx,ts}\"",
     "fakeserver": "yarn json-server --watch ./src/pages/api/mock.json --port 3333"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "yarn format",
-      "yarn lint:fix"
-    ]
   },
   "dependencies": {
     "@next/font": "13.1.6",
@@ -33,11 +27,7 @@
     "styled-components": "5.3.6"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.4.2",
-    "@commitlint/config-conventional": "^17.4.2",
     "@typescript-eslint/eslint-plugin": "5.51.0",
-    "commitizen": "^4.3.0",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint-config-next": "13.1.6",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-import": "2.27.5",
@@ -46,14 +36,7 @@
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.1.0",
     "prettier": "2.8.3",
     "typescript": "4.9.5"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
