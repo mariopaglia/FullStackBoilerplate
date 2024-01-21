@@ -1,0 +1,33 @@
+{
+  "name": "nextjs-structure",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mariopaglia/nextjs-structure.git",
+  "author": "Mario Paglia <mpagliajr@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "bash ./installProject.sh"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "frontend/**/*.{js,jsx,ts,tsx}": [
+      "cd frontend && yarn lint:fix",
+      "cd frontend && yarn format"
+    ],
+    "backend/**/*.{js,jsx,ts,tsx}": [
+      "cd backend && yarn lint:fix",
+      "cd backend && yarn format"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
+    "commitizen": "^4.3.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  }
+}
