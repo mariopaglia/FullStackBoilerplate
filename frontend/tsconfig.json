@@ -20,5 +20,5 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "additional.d.ts", ".eslintrc.js"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist", ".next", "out", "public", "coverage", "cypress"]
 }
