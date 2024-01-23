@@ -6,7 +6,10 @@ node_modules
 .pnp.js
 
 # env
-.env*
+.env.production
+.env.staging
+.env.dev
+.env.local
 
 # testing
 coverage
