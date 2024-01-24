@@ -1,32 +1,58 @@
 # Basic Infrastructure Project with Next.js, Node.js, and TypeORM
 
-This project is a foundational infrastructure built with Next.js in the frontend and a combination of Node.js and TypeORM in the backend. It is structured to provide a solid starting point for modern web applications, offering a clean and efficient architecture.
+This project is a foundational infrastructure built with Next.js in the frontend and a combination of Node.js and TypeORM in the backend. It offers a solid starting point for modern web applications with a clean and efficient architecture.
 
 ## Project Structure
 
-The project is divided into two main parts:
-
-- **Frontend**: Implemented using Next.js, it offers a fast and responsive user experience.
-- **Backend**: Built with Node.js and TypeORM, it provides a robust and scalable API.
+- **Frontend**: Next.js-based application in the `frontend` folder.
+- **Backend**: Node.js application using TypeORM in the `backend` folder.
 
 ### Frontend (Next.js)
 
-Located in the `frontend` folder, the frontend is a Next.js application. It includes reusable components, global style configurations, and a default theme setup.
+The frontend includes reusable components, global style configurations, and a default theme setup.
 
 ### Backend (Node.js and TypeORM)
 
-Located in the `backend` folder, the backend is a Node.js application using TypeORM for database interactions. It includes controllers, entities, middlewares, and other necessary configurations for an efficient API.
+The backend provides a robust and scalable API, with controllers, entities, middlewares, and more.
 
 ## Setup and Usage
 
-To start using and developing this project on your local machine, follow the steps below:
+### Local Development
 
-1. Clone the repository to your local machine.
-2. For the first-time setup, run the `installProject.sh` script. This will automatically install dependencies in the root folder and both the frontend and backend projects.
-3. Alternatively, navigate to the `frontend` folder and execute `yarn install` to install frontend dependencies, and then navigate to the `backend` folder and run `yarn install` for backend dependencies.
-4. Configure your local environment with the necessary configuration files.
-5. Run the startup commands for both the frontend and backend.
+1. **Clone the Repository**: Clone the project to your local machine.
+
+2. **Install Dependencies**:
+
+   - Run `installProject.sh` for a first-time setup.
+   - Or navigate to each of `frontend` and `backend` folders and run `yarn install`.
+
+3. **Configure Environment**:
+
+   - Create a `.env` file in the `backend` folder based on the `.env.example` template.
+   - Adjust database settings (`DB_TYPE`, `DB_HOST`, etc.) according to your local database setup.
+
+4. **Start the Application**:
+   - In the `frontend` folder, run `yarn dev` to start the frontend.
+   - In the `backend` folder, run `yarn dev` to start the backend.
+
+### Using Docker
+
+1. **Configure Environment for Docker**:
+
+   - Ensure `DB_HOST` in your `.env` file is set to the service name of the database in `docker-compose.yml` (usually `db`).
+   - Set other environment variables as required.
+
+2. **Start with Docker Compose**:
+   - Run `docker-compose up` in the root directory to start both frontend and backend in containers.
 
 ## Contributions
 
-Contributions are always welcome! Feel free to fork the project, make your changes, and open a pull request.
+Contributions are welcome! Feel free to fork the project, make changes, and open a pull request.
+
+---
+
+### Additional Notes:
+
+- Make sure to include any specific instructions related to your `installProject.sh` script, if necessary.
+- If there are additional steps or prerequisites for setting up the database or any other services, include those details.
+- Customize the contribution guidelines as per your project's needs.
