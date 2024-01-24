@@ -15,12 +15,12 @@
   },
   "lint-staged": {
     "frontend/**/*.{js,jsx,ts,tsx}": [
-      "cd frontend && yarn lint:fix",
-      "cd frontend && yarn format"
+      "yarn --cwd frontend lint:fix",
+      "yarn --cwd frontend format"
     ],
     "backend/**/*.{js,jsx,ts,tsx}": [
-      "cd backend && yarn lint:fix",
-      "cd backend && yarn format"
+      "yarn --cwd backend lint:fix",
+      "yarn --cwd backend format"
     ]
   },
   "devDependencies": {
