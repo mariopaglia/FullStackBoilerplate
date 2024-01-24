@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Permission for the Husky hooks
+echo "Setting up permissions for the Husky hooks..."
+cd .husky
+chmod +x *
+cd ..
+
 # Check and install dependencies in the root directory
 echo "Checking dependencies in the root directory..."
 if [ ! -d "node_modules" ]; then

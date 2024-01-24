@@ -6,6 +6,7 @@
   "author": "Mario Paglia <mpagliajr@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "prepare": "husky install",
     "postinstall": "bash ./installProject.sh"
   },
   "config": {
