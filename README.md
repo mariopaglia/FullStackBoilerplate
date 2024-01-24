@@ -48,11 +48,3 @@ The backend provides a robust and scalable API, with controllers, entities, midd
 ## Contributions
 
 Contributions are welcome! Feel free to fork the project, make changes, and open a pull request.
-
----
-
-### Additional Notes:
-
-- Make sure to include any specific instructions related to your `installProject.sh` script, if necessary.
-- If there are additional steps or prerequisites for setting up the database or any other services, include those details.
-- Customize the contribution guidelines as per your project's needs.
