@@ -33,7 +33,7 @@ export const handlerUserLogin = async (req: Request, res: Response) => {
       id: user.id,
       name: user.name,
       email: user.email,
-      createdAt: user.createdAt
+      createdAt: user.createdAt,
     });
 
     return res.status(200).json({
