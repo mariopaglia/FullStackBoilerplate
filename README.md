@@ -1,5 +1,19 @@
 # Basic Infrastructure Project with Next.js, Node.js, and TypeORM
 
+![NextJS](https://img.shields.io/badge/next.js-000000.svg?style=for-the-badge&logo=next.js&logoColor=white)
+![ReactJS](https://img.shields.io/badge/react-20232A.svg?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Express](https://img.shields.io/badge/express-000000.svg?style=for-the-badge&logo=express&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-3178C6.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TypeORM](https://img.shields.io/badge/typeorm-E83524.svg?style=for-the-badge&logo=typeorm&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-2496ED.svg?style=for-the-badge&logo=docker&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/postgresql-336791.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+
+![Vercel Deploy](https://img.shields.io/github/deployments/mariopaglia/FullStackBoilerplate/production?label=vercel&style=for-the-badge&logo=vercel)
+![MIT License](https://img.shields.io/github/license/mariopaglia/FullStackBoilerplate.svg?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/mariopaglia/FullStackBoilerplate.svg?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/mariopaglia/FullStackBoilerplate.svg?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/mariopaglia/FullStackBoilerplate.svg?style=for-the-badge)
+
 This project is a foundational infrastructure built with Next.js in the frontend and a combination of Node.js and TypeORM in the backend. It offers a solid starting point for modern web applications with a clean and efficient architecture.
 
 ## Project Structure
