@@ -17,7 +17,7 @@ export const handlerUserLogin = async (req: Request, res: Response) => {
 
     if (!user) {
       return res.status(400).json({
-        message: 'Usuário não existe!',
+        message: 'Usuário ou senha inválidos',
       });
     }
 
@@ -25,7 +25,7 @@ export const handlerUserLogin = async (req: Request, res: Response) => {
 
     if (!isPasswordValid) {
       return res.status(400).json({
-        message: 'Senha inválida!',
+        message: 'Usuário ou senha inválidos',
       });
     }
 
@@ -37,6 +37,7 @@ export const handlerUserLogin = async (req: Request, res: Response) => {
     });
 
     return res.status(200).json({
+      message: 'Login realizado com sucesso!',
       jwt: token,
     });
   } catch (error) {

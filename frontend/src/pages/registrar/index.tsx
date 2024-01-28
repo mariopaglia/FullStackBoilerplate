@@ -1,7 +1,15 @@
 import UserRegister from '@/components/UserRegister';
+import Head from 'next/head';
 
 const RegisterPage = (): JSX.Element => {
-  return <UserRegister />;
+  return (
+    <>
+      <Head>
+        <title>Registrar</title>
+      </Head>
+      <UserRegister />
+    </>
+  );
 };
 
 export default RegisterPage;

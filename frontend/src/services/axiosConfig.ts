@@ -1,14 +1,19 @@
 import axios from 'axios';
+import 'dotenv/config';
+
+const runningInDocker = process.env.RUNNING_IN_DOCKER === 'true';
 
 export const requestBFF = axios.create({
-  baseURL: 'http://localhost:8080/api/',
+  baseURL: `http://localhost:${process.env.APP_PORT}/api/`,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
 export const requestBackend = axios.create({
-  baseURL: 'http://host.docker.internal:3001',
+  baseURL: runningInDocker
+    ? `http://host.docker.internal:${process.env.BACKEND_PORT}`
+    : `http://localhost:${process.env.BACKEND_PORT}`,
   headers: {
     'Content-Type': 'application/json',
   },
