@@ -3,9 +3,11 @@ services:
   frontend:
     build: .
     ports:
-      - ${APP_PORT}:${APP_PORT}
+      - ${PORT}:${PORT}
     environment:
-      - APP_PORT=${APP_PORT}
+      - RUNNING_IN_DOCKER=true
+      - PORT=${PORT}
+      - BACKEND_PORT=${BACKEND_PORT}
     volumes:
       - .:/app
       - /app/node_modules
