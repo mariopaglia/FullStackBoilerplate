@@ -4,6 +4,7 @@ import 'dotenv/config';
 type NodeEnv = 'development' | 'production';
 
 const runningInDocker = process.env.RUNNING_IN_DOCKER === 'true';
+
 const backendURL = {
   development: runningInDocker
     ? `http://host.docker.internal:${process.env.BACKEND_PORT}`
@@ -11,8 +12,15 @@ const backendURL = {
   production: `${process.env.BACKEND_URL}`,
 };
 
+const BFFURL = {
+  development: runningInDocker
+    ? `http://host.docker.internal:${process.env.APP_PORT}`
+    : `http://localhost:${process.env.APP_PORT}`,
+  production: `${process.env.APP_URL}`,
+};
+
 export const requestBFF = axios.create({
-  baseURL: `${window.location.protocol}//${window.location.host}/api/`,
+  baseURL: BFFURL[process.env.NODE_ENV as NodeEnv],
   headers: {
     'Content-Type': 'application/json',
   },
