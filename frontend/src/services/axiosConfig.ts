@@ -12,7 +12,7 @@ const backendURL = {
 };
 
 export const requestBFF = axios.create({
-  baseURL: `http://localhost:${process.env.APP_PORT}/api/`,
+  baseURL: `${window.location.protocol}//${window.location.host}/api/`,
   headers: {
     'Content-Type': 'application/json',
   },
