@@ -14,9 +14,9 @@ const backendURL = {
 
 const BFFURL = {
   development: runningInDocker
-    ? `http://host.docker.internal:${process.env.APP_PORT}`
-    : `http://localhost:${process.env.APP_PORT}`,
-  production: `${process.env.APP_URL}`,
+    ? `http://host.docker.internal:${process.env.APP_PORT}/api/`
+    : `http://localhost:${process.env.APP_PORT}/api/`,
+  production: `${process.env.APP_URL}/api/`,
 };
 
 export const requestBFF = axios.create({
