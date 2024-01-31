@@ -8,7 +8,7 @@ const backendURL = {
   development: runningInDocker
     ? `http://host.docker.internal:${process.env.BACKEND_PORT}`
     : `http://localhost:${process.env.BACKEND_PORT}`,
-  production: `${process.env.BACKEND_URL}:${process.env.BACKEND_PORT}`,
+  production: `${process.env.BACKEND_URL}`,
 };
 
 export const requestBFF = axios.create({
