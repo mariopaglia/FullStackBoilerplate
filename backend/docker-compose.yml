@@ -25,6 +25,7 @@ services:
       - POSTGRES_USER=${DB_USERNAME}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_DATABASE}
+      - NODE_ENV=${NODE_ENV}
     ports:
       - ${DB_PORT}:${DB_PORT}
     volumes:
