@@ -34,7 +34,7 @@ const UserLogin = (): JSX.Element => {
   };
 
   return (
-    <div className='flex justify-center items-center flex-col w-screen h-screen bg-gray-900 px-8'>
+    <div className='flex justify-center items-center flex-col w-screen h-screen px-8'>
       <Card className='w-80 md:w-96 shadow'>
         <CardHeader>
           <CardTitle>Login</CardTitle>

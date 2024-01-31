@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Example = (): JSX.Element => {
   return (
-    <div className='bg-gray-900 h-screen w-screen flex justify-center items-center flex-col text-white'>
+    <div className='h-screen w-screen flex justify-center items-center flex-col'>
       <Head>
         <title>NextJS Structure by Mario Paglia</title>
       </Head>
