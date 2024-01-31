@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "dotenv -c -- next dev",
-    "build": "next build",
+    "dev": "export NODE_ENV=development && dotenv -c -- next dev",
+    "build": "export NODE_ENV=production && next build",
     "start": "dotenv -c -- next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
