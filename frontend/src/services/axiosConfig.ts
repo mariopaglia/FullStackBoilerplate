@@ -12,15 +12,8 @@ const backendURL = {
   production: `${process.env.BACKEND_URL}`,
 };
 
-const BFFURL = {
-  development: runningInDocker
-    ? `http://host.docker.internal:${process.env.APP_PORT}/api/`
-    : `http://localhost:${process.env.APP_PORT}/api/`,
-  production: `${process.env.APP_URL}/api/`,
-};
-
 export const requestBFF = axios.create({
-  baseURL: BFFURL[process.env.NODE_ENV as NodeEnv],
+  baseURL: '/api/',
   headers: {
     'Content-Type': 'application/json',
   },
