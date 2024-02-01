@@ -30,7 +30,11 @@ const UserRegister = (): JSX.Element => {
       toast.success(response.data.message);
     } catch (error) {
       if (error instanceof AxiosError) {
-        toast.error(error.response?.data.message);
+        if (error.response?.data.message) {
+          toast.error(error.response?.data.message);
+        } else {
+          toast.error('Erro ao conectar com o servidor. Tente novamente mais tarde.');
+        }
       }
     }
   };
