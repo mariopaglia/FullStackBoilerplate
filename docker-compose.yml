@@ -1,11 +1,28 @@
-version: '3.8'
+version: "3.8"
 services:
-  backend:
+  frontend:
     build:
-      context: .
+      context: ./frontend
       dockerfile: Dockerfile.dev
     ports:
-      - ${PORT}:${PORT}
+      - ${FRONTEND_PORT}:${FRONTEND_PORT}
+    environment:
+      - RUNNING_IN_DOCKER=true
+      - PORT=${FRONTEND_PORT}
+      - BACKEND_PORT=${BACKEND_PORT}
+      - NODE_ENV=development
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - mynetwork
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    ports:
+      - ${BACKEND_PORT}:${BACKEND_PORT}
     environment:
       - DB_TYPE=${DB_TYPE}
       - DB_HOST=db
@@ -13,14 +30,17 @@ services:
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_DATABASE=${DB_DATABASE}
       - DB_PORT=${DB_PORT}
-      - PORT=${PORT}
+      - PORT=${BACKEND_PORT}
       - JWT_SECRET=${JWT_SECRET}
       - NODE_ENV=development
     volumes:
-      - .:/usr/src/app
+      - ./backend:/usr/src/app
       - /usr/src/app/node_modules
     depends_on:
       - db
+    networks:
+      - mynetwork
+
   db:
     image: postgres
     environment:
@@ -32,5 +52,11 @@ services:
       - ${DB_PORT}:${DB_PORT}
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork: {}
+
 volumes:
-  postgres_data:
+  postgres_data: {}

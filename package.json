@@ -8,8 +8,10 @@
   "scripts": {
     "prepare": "husky install",
     "postinstall": "bash ./installProject.sh",
-    "docker:start": "cd frontend && docker compose up -d && cd ../backend && docker compose up -d",
-    "docker:stop": "cd frontend && docker compose down && cd ../backend && docker compose down"
+    "docker:start": "docker compose up -d",
+    "docker:stop": "docker compose down",
+    "docker:restart": "docker compose restart",
+    "docker:logs": "docker compose logs -f"
   },
   "config": {
     "commitizen": {
