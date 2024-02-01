@@ -9,7 +9,9 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --write \"**/*.{css,scss,jsx,tsx,ts}\"",
-    "fakeserver": "yarn json-server --watch ./src/pages/api/mock.json --port 3333"
+    "fakeserver": "yarn json-server --watch ./src/pages/api/mock.json --port 3333",
+    "docker:start": "docker compose up -d",
+    "docker:stop": "docker compose down"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",

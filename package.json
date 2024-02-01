@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install",
-    "postinstall": "bash ./installProject.sh"
+    "postinstall": "bash ./installProject.sh",
+    "docker:start": "cd frontend && docker compose up -d && cd ../backend && docker compose up -d",
+    "docker:stop": "cd frontend && docker compose down && cd ../backend && docker compose down"
   },
   "config": {
     "commitizen": {
