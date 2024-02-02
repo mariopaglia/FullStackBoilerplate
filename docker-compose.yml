@@ -24,12 +24,7 @@ services:
     ports:
       - ${BACKEND_PORT}:${BACKEND_PORT}
     environment:
-      - DB_TYPE=${DB_TYPE}
-      - DB_HOST=db
-      - DB_USERNAME=${DB_USERNAME}
-      - DB_PASSWORD=${DB_PASSWORD}
-      - DB_DATABASE=${DB_DATABASE}
-      - DB_PORT=${DB_PORT}
+      - DATABASE_URL=${DATABASE_URL}
       - PORT=${BACKEND_PORT}
       - JWT_SECRET=${JWT_SECRET}
       - NODE_ENV=development

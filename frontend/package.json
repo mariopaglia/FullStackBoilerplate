@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "set -a && ../.env && set +a && export PORT=$FRONTEND_PORT && next dev",
+    "dev": "export NODE_ENV=development && dotenv -c -- next dev",
     "build": "export NODE_ENV=production && next build",
     "start": "dotenv -c -- next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",

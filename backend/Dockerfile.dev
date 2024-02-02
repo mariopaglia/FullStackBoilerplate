@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 3001
 
 # Run migrations and then start the application in development mode
-CMD yarn migration:run && yarn dev
+CMD yarn dev
