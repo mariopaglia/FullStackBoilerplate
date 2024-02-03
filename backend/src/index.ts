@@ -1,7 +1,6 @@
 import cors from 'cors';
 import express from 'express';
-import 'reflect-metadata';
-import { prisma } from '../helpers/prismaClient';
+import { prisma } from './helpers/prismaClient';
 import router from './routes';
 
 async function main() {

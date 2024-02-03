@@ -8,10 +8,6 @@
   },
   "scripts": {
     "dev": "export NODE_ENV=development && ts-node-dev src/index.ts",
-    "migration:generate": "typeorm-ts-node-commonjs migration:generate -d src/data-source.ts",
-    "migration:revert": "typeorm-ts-node-commonjs migration:revert -d src/data-source.ts",
-    "migration:run": "typeorm-ts-node-commonjs migration:run -d src/data-source.ts",
-    "migration:run:prd": "typeorm migration:run -d dist/data-source.js",
     "build": "export NODE_ENV=production && ./node_modules/.bin/babel src --out-dir dist --extensions \".ts\" --source-maps",
     "build:prd": "export NODE_ENV=production && rm -rf dist/ && yarn build && yarn migration:run:prd && yarn start",
     "start": "node dist/index.js",
@@ -28,8 +24,6 @@
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.6.5",
     "pg": "^8.11.3",
-    "reflect-metadata": "^0.2.1",
-    "typeorm": "0.3.7",
     "zod": "^3.22.4"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { ZodError } from 'zod';
-import { prisma } from '../../../helpers/prismaClient';
+import { prisma } from '../../helpers/prismaClient';
 import { hashPassword } from '../../utils/password';
 import { createUserSchema } from '../../validators/user';
 export const handlerCreateUser = async (req: Request, res: Response) => {
@@ -9,11 +9,17 @@ export const handlerCreateUser = async (req: Request, res: Response) => {
   try {
     createUserSchema.parse(req.body);
 
+    console.log('passou aqui');
+
     const user = await prisma.user.findUnique({
       where: {
         email,
       },
     });
+
+    console.log('passou aqui 2');
+
+    console.log(user);
 
     if (user) {
       return res.status(400).json({
