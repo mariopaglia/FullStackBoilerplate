@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-import { userRepository } from '../../repositories/userRepository';
+import { prisma } from '../../helpers/prismaClient';
 
 export const handlerListUsers = async (_req: Request, res: Response) => {
   try {
-    const totalUsers = await userRepository.find();
+    const totalUsers = await prisma.user.findMany();
 
     const users = totalUsers.map((user) => {
       return {

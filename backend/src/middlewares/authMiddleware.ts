@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { userRepository } from '../repositories/userRepository';
+import { prisma } from '../helpers/prismaClient';
 import { verifyToken } from '../utils/jwt';
 
 type JWTPayload = {
@@ -23,7 +23,11 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
 
   const { id } = validToken as JWTPayload;
 
-  const userExists = await userRepository.findOneBy({ id });
+  const userExists = await prisma.user.findUnique({
+    where: {
+      id,
+    },
+  });
 
   if (!userExists) {
     return res.status(401).json({

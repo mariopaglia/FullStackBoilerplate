@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { userRepository } from '../../repositories/userRepository';
+import { prisma } from '../../helpers/prismaClient';
 import { generateToken } from '../../utils/jwt';
 import { verifyPassword } from '../../utils/password';
 
@@ -13,7 +13,11 @@ export const handlerUserLogin = async (req: Request, res: Response) => {
   }
 
   try {
-    const user = await userRepository.findOneBy({ email });
+    const user = await prisma.user.findUnique({
+      where: {
+        email,
+      },
+    });
 
     if (!user) {
       return res.status(400).json({
