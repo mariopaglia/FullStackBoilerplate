@@ -14,7 +14,7 @@ class MyDocument extends Document {
           />
           <link rel='icon' href='/favicon.ico' />
         </Head>
-        <body className='dark'>
+        <body>
           <Main />
           <NextScript />
         </body>

@@ -4,6 +4,7 @@ import { LogIn, UserPlus } from 'lucide-react';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { toast } from 'sonner';
+import { ToogleTheme } from '../Shared/ToogleTheme';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import { Input } from '../ui/input';
@@ -39,6 +40,9 @@ const UserLogin = (): JSX.Element => {
 
   return (
     <div className='flex justify-center items-center flex-col w-screen h-screen px-8'>
+      <div className='absolute top-5 right-5'>
+        <ToogleTheme />
+      </div>
       <Card className='w-80 md:w-96 shadow'>
         <CardHeader>
           <CardTitle>Login</CardTitle>
