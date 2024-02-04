@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { prisma } from '../../helpers/prismaClient';
+import { convertDateToBrazilTZ } from '../../utils/date';
 
 export const handlerListUsers = async (_req: Request, res: Response) => {
   try {
@@ -10,7 +11,7 @@ export const handlerListUsers = async (_req: Request, res: Response) => {
         id: user.id,
         name: user.name,
         email: user.email,
-        createdAt: user.createdAt,
+        createdAt: convertDateToBrazilTZ(user.createdAt),
       };
     });
 

@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { prisma } from '../../helpers/prismaClient';
+import { convertDateToBrazilTZ } from '../../utils/date';
 import { generateToken } from '../../utils/jwt';
 import { verifyPassword } from '../../utils/password';
 
@@ -37,7 +38,7 @@ export const handlerUserLogin = async (req: Request, res: Response) => {
       id: user.id,
       name: user.name,
       email: user.email,
-      createdAt: user.createdAt,
+      createdAt: convertDateToBrazilTZ(user.createdAt),
     });
 
     return res.status(200).json({
