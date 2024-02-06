@@ -20,8 +20,17 @@ const UserLogin = (): JSX.Element => {
     event.preventDefault();
 
     try {
+      localStorage.removeItem('jwt');
+
       const response = await userLogin(email, password);
       toast.success(response.data.message);
+
+      const jwtLocalStorage = localStorage.getItem('jwt');
+
+      if (!jwtLocalStorage) {
+        localStorage.setItem('jwt', response.data.jwt);
+        router.push('/usuarios');
+      }
     } catch (error) {
       if (error instanceof AxiosError) {
         if (error.response?.data.message) {

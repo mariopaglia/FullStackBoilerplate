@@ -15,3 +15,7 @@ export const userLogin = async (email: string, password: string): Promise<AxiosR
     password,
   });
 };
+
+export const usersList = async (): Promise<AxiosResponse> => {
+  return requestBFF.get('/user/list');
+};
