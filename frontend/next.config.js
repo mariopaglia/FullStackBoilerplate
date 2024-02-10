@@ -8,6 +8,7 @@ const nextConfig = {
   compiler: {},
   env: {
     BACKEND_PORT: process.env.BACKEND_PORT,
+    BACKEND_URL: process.env.BACKEND_URL,
   },
 };
 
