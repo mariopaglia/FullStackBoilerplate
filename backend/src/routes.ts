@@ -6,11 +6,11 @@ import { authMiddleware } from './middlewares/authMiddleware';
 
 const router = Router();
 
-router.post('/user_create', handlerCreateUser);
-router.post('/login', handlerUserLogin);
+router.post('/user/create', handlerCreateUser);
+router.post('/user/login', handlerUserLogin);
 
 router.use(authMiddleware);
 
-router.get('/users', handlerListUsers);
+router.get('/user/list_users', handlerListUsers);
 
 export default router;

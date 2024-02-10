@@ -1,9 +1,9 @@
 'use client';
 
+import { displayError } from '@/lib/helpers/error';
+import { formatDateAndHours } from '@/lib/utils/date';
 import { usersList } from '@/services';
-import { formatDateAndHours } from '@/utils/date';
 import { useEffect, useState } from 'react';
-import { toast } from 'sonner';
 import { ToogleTheme } from '../Shared/ToogleTheme';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
 
@@ -23,7 +23,7 @@ const UsersList = (): JSX.Element => {
         const response = await usersList();
         setUsers(response.data.users);
       } catch (error) {
-        toast.error('Erro ao buscar a lista de usuários.');
+        displayError(error);
       }
     };
 

@@ -1,5 +1,5 @@
+import { displayError } from '@/lib/helpers/error';
 import { userLogin } from '@/services';
-import { AxiosError } from 'axios';
 import { LogIn, UserPlus } from 'lucide-react';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
@@ -32,13 +32,7 @@ const UserLogin = (): JSX.Element => {
         router.push('/usuarios');
       }
     } catch (error) {
-      if (error instanceof AxiosError) {
-        if (error.response?.data.message) {
-          toast.error(error.response?.data.message);
-        } else {
-          toast.error('Erro ao conectar com o servidor. Tente novamente mais tarde.');
-        }
-      }
+      displayError(error);
     }
   };
 

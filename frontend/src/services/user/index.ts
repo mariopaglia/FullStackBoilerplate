@@ -1,8 +1,8 @@
 import { AxiosResponse } from 'axios';
-import { requestBFF } from '../axiosConfig';
+import { requestBackend } from '../axiosConfig';
 
 export const createUser = async (name: string, email: string, password: string): Promise<AxiosResponse> => {
-  return requestBFF.post('/user/create', {
+  return requestBackend.post('/user/create', {
     name,
     email,
     password,
@@ -10,12 +10,12 @@ export const createUser = async (name: string, email: string, password: string):
 };
 
 export const userLogin = async (email: string, password: string): Promise<AxiosResponse> => {
-  return requestBFF.post('/user/login', {
+  return requestBackend.post('/user/login', {
     email,
     password,
   });
 };
 
 export const usersList = async (): Promise<AxiosResponse> => {
-  return requestBFF.get('/user/list');
+  return requestBackend.get('/user/list_users');
 };
